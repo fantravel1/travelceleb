@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://travelceleb.com/sitemap.xml
+
+# TravelCeleb.com - Follow the Journey. Not the Hype.
