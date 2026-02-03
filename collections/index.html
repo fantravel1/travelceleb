@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Curated Travel Collections - Follow Creator Journeys | TravelCeleb</title>
+  <meta name="description" content="Curated travel collections following the world's top travel influencers through their best destinations. Follow 30 creators through Japan, explore Bali like a pro, and more.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Curated Travel Collections | TravelCeleb">
+  <meta property="og:description" content="Follow creator journeys through curated destination collections. Japan, Bali, Europe road trips, and more.">
+  <meta property="og:url" content="https://travelceleb.com/collections/">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://travelceleb.com/collections/">
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+  <style>
+    .collection-card {
+      position: relative;
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      background: var(--color-midnight);
+      box-shadow: var(--shadow-lg);
+      transition: all var(--transition-base);
+      cursor: pointer;
+    }
+    .collection-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-xl); }
+    .collection-card-image { position: relative; padding-top: 56.25%; overflow: hidden; }
+    .collection-card-image img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform var(--transition-slow); }
+    .collection-card:hover .collection-card-image img { transform: scale(1.05); }
+    .collection-card-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(10,14,39,0.95) 0%, rgba(10,14,39,0.4) 50%, rgba(10,14,39,0.2) 100%);
+      display: flex; flex-direction: column; justify-content: flex-end; padding: var(--space-2xl);
+    }
+    .collection-card-number { font-family: var(--font-display); font-size: var(--text-5xl); font-weight: 800; color: var(--color-coral); opacity: 0.3; position: absolute; top: var(--space-lg); right: var(--space-xl); line-height: 1; }
+    .collection-card-tag { display: inline-flex; align-items: center; gap: 6px; background: rgba(255,107,107,0.2); color: var(--color-coral); padding: 4px 14px; border-radius: var(--radius-full); font-size: var(--text-xs); font-weight: 700; margin-bottom: var(--space-md); backdrop-filter: blur(8px); border: 1px solid rgba(255,107,107,0.2); width: fit-content; }
+    .collection-card h3 { font-family: var(--font-display); font-size: var(--text-2xl); color: var(--color-white); margin-bottom: var(--space-sm); }
+    .collection-card p { color: rgba(255,255,255,0.7); font-size: var(--text-sm); line-height: 1.6; margin-bottom: var(--space-lg); }
+    .collection-card-meta { display: flex; gap: var(--space-lg); }
+    .collection-card-meta-item { display: flex; align-items: center; gap: 6px; font-size: var(--text-xs); color: rgba(255,255,255,0.5); }
+    .collection-card-meta-item strong { color: var(--color-white); font-weight: 600; }
+    .collection-avatars { display: flex; margin-top: var(--space-lg); }
+    .collection-avatars img { width: 32px; height: 32px; border-radius: 50%; border: 2px solid var(--color-midnight); margin-left: -8px; }
+    .collection-avatars img:first-child { margin-left: 0; }
+    .collection-avatars span { display: flex; align-items: center; justify-content: center; width: 32px; height: 32px; border-radius: 50%; background: var(--color-coral); color: white; font-size: var(--text-xs); font-weight: 700; margin-left: -8px; border: 2px solid var(--color-midnight); }
+  </style>
+</head>
+<body>
+
+  <nav class="nav" id="mainNav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo" aria-label="TravelCeleb Home">
+        <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="18" cy="18" r="16" stroke="#ff6b6b" stroke-width="2.5" fill="none"/><path d="M18 4 C18 4 28 14 28 20 C28 26 23 30 18 30 C13 30 8 26 8 20 C8 14 18 4 18 4Z" fill="#ff6b6b" opacity="0.2"/><path d="M12 18 L16 22 L24 14" stroke="#ff6b6b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Travel<span class="accent">Celeb</span>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="/">Home</a><a href="../creators/">Creators</a><a href="../destinations/">Destinations</a><a href="../activities/">Activities</a><a href="../about/">About</a>
+        <a href="/#newsletter" class="nav-cta">Follow Journeys</a>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <section class="page-header">
+    <div class="container">
+      <nav class="breadcrumbs" aria-label="Breadcrumb" style="justify-content: center;">
+        <a href="/">Home</a><span class="separator">/</span><span>Collections</span>
+      </nav>
+      <h1>Curated <span class="text-gradient">Collections</span></h1>
+      <p>Follow the world's top travel creators through their best destinations. Curated paths, verified journeys, and insider knowledge.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>Featured <span class="text-gradient">Collections</span></h2>
+        <p>Multi-stop journeys curated from the best creator content.</p>
+      </div>
+
+      <div style="display: grid; gap: var(--space-2xl);" class="stagger-children">
+
+        <!-- Collection 1: Japan -->
+        <div class="collection-card">
+          <div class="collection-card-image">
+            <img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=1200&h=675&fit=crop" alt="Japan Collection" width="1200" height="675" loading="lazy">
+            <div class="collection-card-overlay">
+              <div class="collection-card-number">01</div>
+              <div class="collection-card-tag">30 Creators - 8 Cities - 45 Videos</div>
+              <h3>Follow 30 Creators Through Japan</h3>
+              <p>From the neon lights of Tokyo's Shibuya to the tranquil bamboo groves of Arashiyama in Kyoto. This collection brings together 30 of the world's top travel creators to create the definitive Japan guide - covering food, culture, adventure, and the hidden gems that only locals know.</p>
+              <div class="collection-card-meta">
+                <div class="collection-card-meta-item"><strong>8 Cities:</strong> Tokyo, Kyoto, Osaka, Hiroshima, Nara, Hakone, Nikko, Okinawa</div>
+              </div>
+              <div class="collection-avatars">
+                <img src="https://yt3.googleusercontent.com/ytc/AIdro_lPKBGJPNPezhJEbFNqGLD5RCfMvQDIst2HGfMgDdDhew=s176-c-k-c0x00ffffff-no-rj" alt="Mark Wiens" loading="lazy">
+                <img src="https://yt3.googleusercontent.com/ytc/AIdro_nZP2OlKMzME2JCpM9NrMIn3PRjNTBqh5RaI0JBxp7bew=s176-c-k-c0x00ffffff-no-rj" alt="Vagabrothers" loading="lazy">
+                <img src="https://yt3.googleusercontent.com/ytc/AIdro_kZ7tJRkVOhGSeXQn_QkIqNMXVMsPBVvLhGkOqwJY1cSYI=s176-c-k-c0x00ffffff-no-rj" alt="Kara and Nate" loading="lazy">
+                <img src="https://yt3.googleusercontent.com/ytc/AIdro_n0Yzb1VGqsPNsQjVfJhjLwb1Fj3SKlWKS_OhX8e-haPWc=s176-c-k-c0x00ffffff-no-rj" alt="Drew Binsky" loading="lazy">
+                <span>+26</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Collection 2: Bali -->
+        <div class="collection-card">
+          <div class="collection-card-image">
+            <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=1200&h=675&fit=crop" alt="Bali Collection" width="1200" height="675" loading="lazy">
+            <div class="collection-card-overlay">
+              <div class="collection-card-number">02</div>
+              <div class="collection-card-tag">50 Creators - 12 Regions - 80 Videos</div>
+              <h3>The Ultimate Bali Guide: 50 Creators Show You Everything</h3>
+              <p>Bali like you've never seen it. From the hipster cafes of Canggu to the ancient temples of Ubud, the cliff-top bars of Uluwatu to the underwater world of Nusa Penida. Fifty of the world's top travel creators reveal every corner of the Island of Gods.</p>
+              <div class="collection-card-meta">
+                <div class="collection-card-meta-item"><strong>12 Regions:</strong> Ubud, Canggu, Seminyak, Uluwatu, Nusa Penida, Nusa Lembongan, Amed, Sidemen, Munduk, Sanur, Kuta, Jimbaran</div>
+              </div>
+              <div class="collection-avatars">
+                <img src="https://yt3.googleusercontent.com/ytc/AIdro_mYqkJJRQ-k_HGzcuFLQGiJvWHKJGCqg39HGi0p3KSf0Q=s176-c-k-c0x00ffffff-no-rj" alt="Lost LeBlanc" loading="lazy">
+                <img src="https://yt3.googleusercontent.com/ytc/AIdro_kZ7tJRkVOhGSeXQn_QkIqNMXVMsPBVvLhGkOqwJY1cSYI=s176-c-k-c0x00ffffff-no-rj" alt="Kara and Nate" loading="lazy">
+                <img src="https://yt3.googleusercontent.com/ytc/AIdro_mJwYux2WASrH9wNq_FP0FTnVO93uhpXvxQ6h3xaINpUCQ=s176-c-k-c0x00ffffff-no-rj" alt="Bucket List Family" loading="lazy">
+                <span>+47</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Collection 3: Europe Road Trip -->
+        <div class="collection-card">
+          <div class="collection-card-image">
+            <img src="https://images.unsplash.com/photo-1534308983496-4fabb1a015ee?w=1200&h=675&fit=crop" alt="Europe Road Trip Collection" width="1200" height="675" loading="lazy">
+            <div class="collection-card-overlay">
+              <div class="collection-card-number">03</div>
+              <div class="collection-card-tag">25 Creators - 15 Countries - 60 Videos</div>
+              <h3>The Epic European Road Trip: 15 Countries in One Journey</h3>
+              <p>The ultimate European adventure stitched together from 25 creators' road trips. Start in Portugal, drive through Spain, France, Italy, Switzerland, Germany, and beyond. Includes the best coastal routes, mountain passes, medieval towns, and hidden villages.</p>
+              <div class="collection-card-meta">
+                <div class="collection-card-meta-item"><strong>Route:</strong> Lisbon &rarr; Barcelona &rarr; Nice &rarr; Amalfi &rarr; Swiss Alps &rarr; Munich &rarr; Prague &rarr; Dubrovnik</div>
+              </div>
+              <div class="collection-avatars">
+                <img src="https://yt3.googleusercontent.com/ytc/AIdro_nZP2OlKMzME2JCpM9NrMIn3PRjNTBqh5RaI0JBxp7bew=s176-c-k-c0x00ffffff-no-rj" alt="Vagabrothers" loading="lazy">
+                <img src="https://yt3.googleusercontent.com/ytc/AIdro_kZ7tJRkVOhGSeXQn_QkIqNMXVMsPBVvLhGkOqwJY1cSYI=s176-c-k-c0x00ffffff-no-rj" alt="Kara and Nate" loading="lazy">
+                <img src="https://yt3.googleusercontent.com/ytc/AIdro_n0Yzb1VGqsPNsQjVfJhjLwb1Fj3SKlWKS_OhX8e-haPWc=s176-c-k-c0x00ffffff-no-rj" alt="Drew Binsky" loading="lazy">
+                <span>+22</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Collection 4: Southeast Asia -->
+        <div class="collection-card">
+          <div class="collection-card-image">
+            <img src="https://images.unsplash.com/photo-1508009603885-50cf7c579365?w=1200&h=675&fit=crop" alt="Southeast Asia Collection" width="1200" height="675" loading="lazy">
+            <div class="collection-card-overlay">
+              <div class="collection-card-number">04</div>
+              <div class="collection-card-tag">40 Creators - 8 Countries - 100 Videos</div>
+              <h3>Southeast Asia Backpacker's Bible: 8 Countries, 40 Creators</h3>
+              <p>The definitive backpacking guide through Southeast Asia. Thailand, Vietnam, Cambodia, Laos, Myanmar, Indonesia, Philippines, and Malaysia - all documented by creators who spent months exploring each country on budgets from $20 to $200 per day.</p>
+              <div class="collection-card-meta">
+                <div class="collection-card-meta-item"><strong>Route:</strong> Bangkok &rarr; Chiang Mai &rarr; Luang Prabang &rarr; Hanoi &rarr; Hoi An &rarr; Siem Reap &rarr; Bali</div>
+              </div>
+              <div class="collection-avatars">
+                <img src="https://yt3.googleusercontent.com/ytc/AIdro_lPKBGJPNPezhJEbFNqGLD5RCfMvQDIst2HGfMgDdDhew=s176-c-k-c0x00ffffff-no-rj" alt="Mark Wiens" loading="lazy">
+                <img src="https://yt3.googleusercontent.com/ytc/AIdro_mYqkJJRQ-k_HGzcuFLQGiJvWHKJGCqg39HGi0p3KSf0Q=s176-c-k-c0x00ffffff-no-rj" alt="Lost LeBlanc" loading="lazy">
+                <img src="https://yt3.googleusercontent.com/ytc/AIdro_kZ7tJRkVOhGSeXQn_QkIqNMXVMsPBVvLhGkOqwJY1cSYI=s176-c-k-c0x00ffffff-no-rj" alt="Kara and Nate" loading="lazy">
+                <span>+37</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Collection 5: World's Best Hotels -->
+        <div class="collection-card">
+          <div class="collection-card-image">
+            <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=1200&h=675&fit=crop" alt="Luxury Hotels Collection" width="1200" height="675" loading="lazy">
+            <div class="collection-card-overlay">
+              <div class="collection-card-number">05</div>
+              <div class="collection-card-tag">20 Creators - 30 Hotels - 50 Reviews</div>
+              <h3>The World's 30 Best Hotels, Reviewed by Top Creators</h3>
+              <p>From Soneva Fushi in the Maldives to Aman Tokyo, from Giraffe Manor in Kenya to the Ritz Paris. Twenty of the world's top luxury travel creators review the 30 most iconic hotels on the planet with honest, detailed assessments.</p>
+              <div class="collection-card-meta">
+                <div class="collection-card-meta-item"><strong>Price Range:</strong> $500 - $25,000+ per night</div>
+              </div>
+              <div class="collection-avatars">
+                <img src="https://yt3.googleusercontent.com/ytc/AIdro_mYqkJJRQ-k_HGzcuFLQGiJvWHKJGCqg39HGi0p3KSf0Q=s176-c-k-c0x00ffffff-no-rj" alt="Lost LeBlanc" loading="lazy">
+                <img src="https://yt3.googleusercontent.com/ytc/AIdro_mJwYux2WASrH9wNq_FP0FTnVO93uhpXvxQ6h3xaINpUCQ=s176-c-k-c0x00ffffff-no-rj" alt="Bucket List Family" loading="lazy">
+                <span>+18</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Collection 6: Africa Safari -->
+        <div class="collection-card">
+          <div class="collection-card-image">
+            <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?w=1200&h=675&fit=crop" alt="Africa Safari Collection" width="1200" height="675" loading="lazy">
+            <div class="collection-card-overlay">
+              <div class="collection-card-number">06</div>
+              <div class="collection-card-tag">15 Creators - 6 Countries - 35 Videos</div>
+              <h3>African Safari: 15 Creators Track the Big Five</h3>
+              <p>Experience the magic of African wildlife through the eyes of 15 travel creators. From the Great Migration in the Serengeti to gorilla trekking in Uganda, from Victoria Falls to the deserts of Namibia. The most comprehensive safari guide on the internet.</p>
+              <div class="collection-card-meta">
+                <div class="collection-card-meta-item"><strong>Countries:</strong> Tanzania, Kenya, Uganda, South Africa, Namibia, Botswana</div>
+              </div>
+              <div class="collection-avatars">
+                <img src="https://yt3.googleusercontent.com/ytc/AIdro_kZ7tJRkVOhGSeXQn_QkIqNMXVMsPBVvLhGkOqwJY1cSYI=s176-c-k-c0x00ffffff-no-rj" alt="Kara and Nate" loading="lazy">
+                <img src="https://yt3.googleusercontent.com/ytc/AIdro_n0Yzb1VGqsPNsQjVfJhjLwb1Fj3SKlWKS_OhX8e-haPWc=s176-c-k-c0x00ffffff-no-rj" alt="Drew Binsky" loading="lazy">
+                <img src="https://yt3.googleusercontent.com/ytc/AIdro_k5mAbFSdJXbOoiixlRHb9s2rDjXl-AaT-sDyyTgSjXVQ=s176-c-k-c0x00ffffff-no-rj" alt="Yes Theory" loading="lazy">
+                <span>+12</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- How Collections Work -->
+  <section class="section section-alt">
+    <div class="container" style="max-width: 800px;">
+      <div class="section-header reveal">
+        <h2>How <span class="text-gradient">Collections</span> Work</h2>
+        <p>Every collection is built from real creator content, verified and curated for accuracy.</p>
+      </div>
+      <div class="reveal" style="display: grid; gap: var(--space-xl);">
+        <div style="display: flex; gap: var(--space-xl); align-items: flex-start;">
+          <div style="width: 48px; height: 48px; border-radius: 50%; background: var(--color-coral); color: white; display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0;">1</div>
+          <div><h3 style="font-family: var(--font-display); font-size: var(--text-lg); margin-bottom: 4px;">Creator Content Analysis</h3><p style="color: var(--color-slate);">We analyze public videos, posts, and blogs from multiple creators who visited the same region.</p></div>
+        </div>
+        <div style="display: flex; gap: var(--space-xl); align-items: flex-start;">
+          <div style="width: 48px; height: 48px; border-radius: 50%; background: var(--color-teal); color: white; display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0;">2</div>
+          <div><h3 style="font-family: var(--font-display); font-size: var(--text-lg); margin-bottom: 4px;">Route Optimization</h3><p style="color: var(--color-slate);">Individual creator journeys are stitched into an optimal multi-stop route covering the best experiences.</p></div>
+        </div>
+        <div style="display: flex; gap: var(--space-xl); align-items: flex-start;">
+          <div style="width: 48px; height: 48px; border-radius: 50%; background: var(--color-gold-dark); color: white; display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0;">3</div>
+          <div><h3 style="font-family: var(--font-display); font-size: var(--text-lg); margin-bottom: 4px;">Verification & Curation</h3><p style="color: var(--color-slate);">Every recommendation is verified against multiple sources. Sponsored content is clearly labeled.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section" id="newsletter">
+    <h2>Get New Collections First</h2>
+    <p>Be the first to know when we publish new curated travel collections from the world's top creators.</p>
+    <form class="newsletter-form" action="#" method="post" aria-label="Newsletter signup">
+      <input type="email" placeholder="Enter your email" aria-label="Email address" required>
+      <button type="submit" class="btn btn-primary">Subscribe</button>
+    </form>
+  </section>
+
+  <footer class="footer" role="contentinfo">
+    <div class="footer-grid">
+      <div class="footer-brand"><div class="footer-brand-name">Travel<span>Celeb</span></div><p>The world's definitive guide to where travel influencers actually go.</p></div>
+      <div class="footer-col"><h4>Explore</h4><ul><li><a href="../creators/">Creators</a></li><li><a href="../destinations/">Destinations</a></li><li><a href="../activities/">Activities</a></li><li><a href="../rankings/">Rankings</a></li><li><a href="../collections/">Collections</a></li></ul></div>
+      <div class="footer-col"><h4>Top Destinations</h4><ul><li><a href="../destinations/#bali">Bali</a></li><li><a href="../destinations/#tokyo">Tokyo</a></li><li><a href="../destinations/#santorini">Santorini</a></li><li><a href="../destinations/#dubai">Dubai</a></li></ul></div>
+      <div class="footer-col"><h4>Company</h4><ul><li><a href="../about/">About</a></li><li><a href="../about/">Contact</a></li><li><a href="../about/">Privacy</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 TravelCeleb.com. All rights reserved.</p>
+      <div class="footer-social">
+        <a href="#" aria-label="Twitter"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
